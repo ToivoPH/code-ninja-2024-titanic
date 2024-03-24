@@ -41,9 +41,31 @@ plt.savefig('demopieagetitanic.png')
 """
 
 #task 3 
-#what are the chances of a child surviving
-
-under_30 = df[df['Age'] < 30]
+#what are the chances of a young person surviving
+"""
+under_30 = df[(df['Age'] < 30) & (df['Survived'] == True)]
 
 psurvive =  len(under_30) / len(df)
 print(f"{psurvive * 100}%")
+#df['s rate'] = len(under_30) / len(df)
+"""
+
+#task 4
+#find the relation between wealth and survivability
+
+datasurvive = []
+
+for i in range(1, 4):
+    survived = df[(df['Pclass'] >= i) & (df['Survived'] == True)]
+
+    psurvive =  len(survived) / len(df)
+    print(f"#{i} class {psurvive * 100}%")
+    i += 1
+    
+    datasurvive.append([i, psurvive * 100])
+
+df_result = pd.DataFrame(datasurvive, columns=[i, psurvive])
+df_result = df_result.set_index(i).transpose()
+#transpose to make the psurvive a row
+csv_filename = "psurvive_results_class.csv"
+df_result.to_csv(csv_filename)
