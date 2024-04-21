@@ -52,7 +52,7 @@ print(f"{psurvive * 100}%")
 
 #task 4
 #find the relation between wealth and survivability
-
+"""
 datasurvive = []
 
 for i in range(1, 4):
@@ -69,3 +69,4 @@ df_result = df_result.set_index(i).transpose()
 #transpose to make the psurvive a row
 csv_filename = "psurvive_results_class.csv"
 df_result.to_csv(csv_filename)
+"""
