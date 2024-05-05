@@ -4,7 +4,7 @@ print('running')
 
 df = pd.read_csv("titanic_cleaned.csv")
 
-df.iloc[1:3]
+#df.iloc[1:3]
 #iloc is rows then columns (:,:)
 
 #df[df['Age'] <= 16]
@@ -24,7 +24,7 @@ plt.savefig('demotitanic.png') #save this graphic to your computer
 df[['Sex', 'Fare']].groupby('Sex').sum()
 """
 
-#task 2
+#task 2 here
 """import matplotlib.pyplot as plt
 titanic = pd.read_csv('titanic_cleaned.csv')
 
